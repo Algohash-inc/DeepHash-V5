@@ -1,0 +1,14 @@
+# DeepHash V5 on one NVIDIA B200 (high throughput).
+# Usage: vllm serve <model dir> --config vllm/b200.yaml
+served-model-name: deephash-v5
+host: 0.0.0.0
+port: 8000
+max-model-len: 16384
+max-num-seqs: 64
+gpu-memory-utilization: 0.90
+trust-remote-code: true
+moe-backend: marlin
+attention-backend: TRITON_ATTN
+reasoning-parser: gemma4
+enable-auto-tool-choice: true
+tool-call-parser: gemma4

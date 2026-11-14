@@ -1,0 +1,16 @@
+# DeepHash V5 on one 32 GB card (RTX 5090), full 256K context.
+# Usage: vllm serve <model dir> --config vllm/rtx5090.yaml
+served-model-name: deephash-v5
+host: 0.0.0.0
+port: 8000
+max-model-len: 262144
+max-num-seqs: 2
+max-num-batched-tokens: 8192
+gpu-memory-utilization: 0.80
+trust-remote-code: true
+moe-backend: marlin
+attention-backend: TRITON_ATTN
+reasoning-parser: gemma4
+enable-auto-tool-choice: true
+tool-call-parser: gemma4
+enable-prefix-caching: true
